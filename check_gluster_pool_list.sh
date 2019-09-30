@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Source: https://github.com/svamberg/monitoring-plugins-glusterfs
+
 STATE_OK=0
 STATE_WARNING=1
 STATE_CRITICAL=2
