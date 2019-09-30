@@ -11,22 +11,22 @@ MSG_WARNING="Not all pools are connected."
 MSG_CRITICAL="Not all pools are connected."
 MSG_UNKNOWN="Gluster mischmatch"
 
-STATE=$STATE_OK
-MSG=$MSG_OK
+STATE="$STATE_OK"
+MSG="$MSG_OK"
 
 
 LIST=`sudo gluster pool list`
 
 
-FAILS=`echo $RET | grep -v Connected`
+FAILS=`echo "$RET" | grep -v Connected`
 
-if [ ! -z $FAILS ] ; then
+if [ ! -z "$FAILS" ] ; then
     MSG="$MSG_CRITICAL\n$LIST"
-    STATE=$STATE_CRITICAL
+    STATE="$STATE_CRITICAL"
 fi
 
 
-echo "$MSG"
+echo -e "$MSG"
 exit $STATE
 
 
